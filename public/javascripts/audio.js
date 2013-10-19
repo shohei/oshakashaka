@@ -9,7 +9,7 @@ else if(typeof(AudioContext)!=="undefined"){
 }
 
 var buffer = null;
-LoadSample(audioctx, "/music/snare.wav");
+LoadSample(audioctx, "/music/bell.wav");
 
 //oscillator code
 var play=0;
