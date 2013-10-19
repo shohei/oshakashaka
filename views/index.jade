@@ -2,13 +2,17 @@ h1= page_name
 p Welcome back to #{page_name}
 div#maincontents
 h1 gyroSensor
-input(type='button', id='result_x' value=100)
-input(type='button', id='result_y' value=100)
-input(type='button', id='result_z' value=100)
+canvas(width='400', height='400', data-src='/processing/test01.pde' id='canvas1')
+h2#result_x
+h2#result_y
+h2#result_z
+h2#result_x2
+h2#result_y2
+h2#result_z2
 button#button buffer on
 button#oscillator osc start
 input(type='button', id='freq', value=500)
 input(type='hidden', id='level', value=0.5)
-input(type='button', id='bg-button' value='play/pause')
+input(type='button', id='bg-button' value='Draw a Circle')
 input(id='bg' type='range' value='0' min='0' max='100' style='width: 400px')
 audio(src='music/bgm1.mp3' controls)

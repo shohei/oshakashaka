@@ -58,15 +58,6 @@ function LoadSample(ctx, url) {
     req.send();
 }
 
-//audio filter
-var audioElement = document.querySelector('audio');
-var mediaSourceNode = context.createMediaElementSource(audioElement);
-// Create the filter
-var filter = context.createBiquadFilter();
-// Create the audio graph.
-mediaSourceNode.connect(filter);
-filter.connect(context.destination);
-
 
 //jquery usage code
 $(function(){
@@ -78,6 +69,8 @@ $(function(){
     $("#oscillator").click(function(){
         StartOsc();
     });
+
+
 });
 
 

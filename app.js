@@ -53,6 +53,10 @@ io.sockets.on('connection', function (socket) {
 		socket.broadcast.emit('x_snare');
 	});
 
+	socket.on('gyro_val',function(data){
+		socket.broadcast.emit('gyro_val',{x_val : data["x_val"], y_val : data["y_val"],z_val : data["z_val"]});
+	});
+
 	// data from serial port
 	sp.on('data', function(input){
 		var arduino_data = input;

@@ -8,7 +8,7 @@ $(function(){
 
 	socket.on('x_snare', function(){
 		Play();
-		
+
 	})
 
 	
@@ -19,8 +19,7 @@ $(function(){
 		Setup();
 	})
 
+
 });
-
-
 
 
