@@ -10,16 +10,16 @@ var app = module.exports = express.createServer();
 var io = io.listen(app);
 
 //Serial port
-var serialport = require('serialport');
-var portName = '/dev/tty.usbmodemfa131';
-var sp = new serialport.SerialPort(portName,{
-	baudRate: 9600,
-	dataBits: 8,
-	parity: 'none',
-	stopBits: 1,
-	flowControl: false,
-	parser: serialport.parsers.readline("\n")
-});
+// var serialport = require('serialport');
+// var portName = '/dev/tty.usbmodemfa131';
+// var sp = new serialport.SerialPort(portName,{
+// 	baudRate: 9600,
+// 	dataBits: 8,
+// 	parity: 'none',
+// 	stopBits: 1,
+// 	flowControl: false,
+// 	parser: serialport.parsers.readline("\n")
+// });
 
 // Configuration
 
@@ -58,10 +58,10 @@ io.sockets.on('connection', function (socket) {
 	});
 
 	// data from serial port
-	sp.on('data', function(input){
-		var arduino_data = input;
-		socket.emit('pin_state',{state : arduino_data});
-	});
+	// sp.on('data', function(input){
+	// 	var arduino_data = input;
+	// 	socket.emit('pin_state',{state : arduino_data});
+	// });
 
 });
 
