@@ -3,13 +3,11 @@ $(function(){
 	//starting web socket
 	socket.on('news_event', function(data){
 		//console.log(data);
-		alert("node-ninja sucks");
 		alert(data["event_code"]);
 	});
 
 	socket.on('x_snare', function(data){
-		console.log(data);
-		Play();
+		Play(data['devid']);
 
 	})
 
