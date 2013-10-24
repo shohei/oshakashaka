@@ -7,7 +7,8 @@ $(function(){
 	});
 
 	socket.on('x_snare', function(data){
-		Play(data['devid']);
+		console.log(data);
+		Play();
 
 	})
 
