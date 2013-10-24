@@ -15,8 +15,8 @@ $(function(){
  	},false);
 
  	mobsocket.on('gyro_val', function(data){
- 		$("#result_x2").text("x:"+ data["x_val"]);
- 		$("#result_y2").text("y:"+ data["y_val"]);
- 		$("#result_z2").text("z:"+ data["z_val"]);
+ 		$("#result_x2").text("x2:"+ data["x_val"]);
+ 		$("#result_y2").text("y2:"+ data["y_val"]);
+ 		$("#result_z2").text("z2:"+ data["z_val"]);
  	});
 });
