@@ -5,8 +5,7 @@ $(function(){
  		var y = evt.accelerationIncludingGravity.y; //
  		var z = evt.accelerationIncludingGravity.z; //
  		if(x > 9){
-		    console.log(mobsocket.id);
-		    mobsocket.emit('x_snare',mobsocket.id);
+		    mobsocket.emit('x_snare');
  			//Play();//doesnt work
  		}
  		$("#result_x").text("x:"+x);
