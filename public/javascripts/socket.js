@@ -3,6 +3,7 @@ $(function(){
 	//starting web socket
 	socket.on('news_event', function(data){
 		//console.log(data);
+		alert("node-ninja sucks");
 		alert(data["event_code"]);
 	});
 
