@@ -47,10 +47,9 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 //socket.io code
 io.sockets.on('connection', function (socket) {
-	socket.emit('news_event',{event_code : 'websocket is ready'});
+	socket.emit('news_event',{event_code : 'websocket is ready for '+socket.id});
 
 	socket.on('x_snare',function(data){
-		alert(socket.id);
 		socket.broadcast.emit('x_snare');
 	});
 
