@@ -38,7 +38,6 @@ function Setup() {
 //play buffer
 function Play(socketid) {
     //alert('ok');
-    console.log(socketid);
     var src = audioctx.createBufferSource();
     src.buffer = buffer;
     src.connect(audioctx.destination);
