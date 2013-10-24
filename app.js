@@ -50,7 +50,8 @@ io.sockets.on('connection', function (socket) {
 	socket.emit('news_event',{event_code : 'websocket is ready'});
 
 	socket.on('x_snare',function(data){
-		socket.broadcast.emit('x_snare',{devid:socket.id});
+		alert(socket.id);
+		socket.broadcast.emit('x_snare');
 	});
 
 	socket.on('gyro_val',function(data){
