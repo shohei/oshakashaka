@@ -5,7 +5,7 @@ $(function(){
 	//starting web socket
 	socket.on('news_event', function(data){
 		//console.log(data);
-		alert(data["event_code"]);
+		//alert(data["event_code"]);
 	});
 
 	socket.on('x_snare', function(data){

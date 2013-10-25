@@ -46,7 +46,7 @@ $(function(){
  		$("#result_z2").text("z:"+ data["z_val"]);
  	});
 	mobsocket.on("image_event",function(soundId){
-		alert(soundId);
+		//alert(soundId);
 	 	$("#user_img").html("<img src='/images/jack"+soundId+"_proccessed.png' class='jack'>");    	 		
 	});
 

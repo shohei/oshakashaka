@@ -10,6 +10,7 @@ $(function(){
 		 	speed: 20
 		 });
 		 $("#jack"+soundId).trigger('startRumble');
+ 		$("#jack"+data["soundId"]).yurayura({"move":5,"delay":10,"duration":1000*60*30})
 	});
 	socket.on("desktop_refresh",function(soundId){
 		$("#jack"+soundId).css("opacity",0.3);		

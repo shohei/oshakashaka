@@ -5,13 +5,13 @@ $(function(){
     	//Smart phone
 	 	$("#main").load("mobile.html",null,function(){
 	 		$.getScript("javascripts/gyro.js");
-	 		alert("mobile client");
+	 		//alert("mobile client");
 	 	});
 
 	} else if (navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('iPad') > 0){
 
 	    //Tablet
-	 	alert("tablet client");    
+	 	//alert("tablet client");    
 
 	} else {
 
