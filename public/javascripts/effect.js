@@ -1,26 +1,24 @@
 $(function(){
-	//xxx	alert("loaded");
+
 	$("#button1").click(function(){
-		alert("button1");
+		$('#jack1_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		$('#jack1_shadow').hide("puff", {"percent": 200}, 2000);
 	});
 	$("#button2").click(function(){
-		$("#jack2").css("opacity",1);
-		alert("button2");
+		$('#jack2_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		$('#jack2_shadow').hide("puff", {"percent": 200}, 2000);
 	});
 	$("#button3").click(function(){
-		$("#jack3").css("opacity",0.4);
-		alert("button3");
+		$('#jack3_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		$('#jack3_shadow').hide("puff", {"percent": 200}, 2000);
+	});
+	$("#button4").click(function(){
+		$('#jack4_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		$('#jack4_shadow').hide("puff", {"percent": 200}, 2000);
+	});
+	$("#button5").click(function(){
+		$('#jack5_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		$('#jack5_shadow').hide("puff", {"percent": 200}, 2000);
 	});
 
-	$("#button").click(function(){
-		$('#button').illuminate({
-			'intensity': '0.3',
-			'color': '#98cb00',
-			'blink': 'true',
-			'blinkSpeed': '1200',
-			'outerGlow': 'true',
-			'outerGlowSize': '30px',
-			'outerGlowColor': '#98cb00'
-		});
-	});
 });

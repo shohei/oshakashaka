@@ -41,7 +41,7 @@
     	position: absolute;  
     	top: 400px;  
     	left: 200px;  
-    	opacity: 0.3;
+    	opacity: 1;
 		width: 100px;
 	}
 
@@ -74,3 +74,47 @@
         opacity: 0.3;
         width: 100px;
     }
+
+#jack1_shadow{
+    position: absolute;  
+        top: 400px;  
+        left: 200px;  
+        opacity: 0;
+        width: 200px;
+  
+/*    -webkit-filter: drop-shadow(4px 4px 40px white);
+    -moz-filter: drop-shadow(4px 4px 40px white);
+    -ms-filter: drop-shadow(4px 4px 40px white);
+    -o-filter: drop-shadow(4px 4px 40px white);
+    filter: drop-shadow(4px 4px 40px white);
+*/
+}
+#jack2_shadow{
+    position: absolute;  
+        top: 400px;  
+        left: 400px;  
+        opacity: 0;
+        width: 400px;
+}
+
+#jack3_shadow{
+    position: absolute;  
+        top: 400px;  
+        left: 600px;  
+        opacity: 0;
+        width: 200px;
+}
+#jack4_shadow{
+    position: absolute;  
+        top: 400px;  
+        left: 800px;  
+        opacity: 0;
+        width: 200px;
+}
+#jack5_shadow{
+    position: absolute;  
+        top: 400px;  
+        left: 1000px;  
+        opacity: 0;
+        width: 200px;
+}

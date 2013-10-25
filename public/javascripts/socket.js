@@ -11,6 +11,7 @@ $(function(){
 	socket.on('x_snare', function(data){
 		if(data["usercount"] == 10){
 		Play(data["soundId"]);
+		navigator.notification.vibrate(1000);
 	}
 	$("#count"+data["soundId"]).text(data["usercount"]);
 
