@@ -28,7 +28,7 @@ $(function(){
  	});
 	mobsocket.on("image_event",function(soundId){
 		alert(soundId);
-	 	$("#user_img").html("<img src='/images/jack"+soundId+".jpg' class='jack'>");    	 			 	
+	 	$("#user_img").html("<img src='/images/jack"+soundId+"_proccessed.png' class='jack'>");    	 			 	
 	})
 
 });

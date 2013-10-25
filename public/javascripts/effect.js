@@ -5,6 +5,9 @@ $(function(){
 		$('#jack1_shadow').hide("puff", {"percent": 200}, 2000);
 	});
 	$("#button2").click(function(){
+		$('#jack2_shadow').css("top","200px");//effect( 'explode', '', 700 );
+		$('#jack2_shadow').css("left","200px");//effect( 'explode', '', 700 );
+		$('#jack2_shadow').css("width","600px");//effect( 'explode', '', 700 );
 		$('#jack2_shadow').css("opacity",1);//effect( 'explode', '', 700 );
 		$('#jack2_shadow').hide("puff", {"percent": 200}, 2000);
 	});
