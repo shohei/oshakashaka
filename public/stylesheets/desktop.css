@@ -1,12 +1,12 @@
  body  {
 	 	padding: 50px;
   		font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-   		background: url("../images/halloween3.jpg") no-repeat center center fixed;
+/*   		background: url("../images/halloween3.jpg") no-repeat center center fixed;
     	-webkit-background-size: cover;
     	-moz-background-size: cover;
     	-o-background-size: cover;
     	background-size: cover;
-	}
+*/	}
 
 .count{
     color: #ffffff;
@@ -39,40 +39,40 @@
     }
  #jack1 {
     	position: absolute;  
-    	top: 400px;  
-    	left: 200px;  
+    	top: 300px;  
+    	left: 100px;  
     	opacity: 0.3;
-		width: 100px;
+		width: 300px;
 	}
 
  #jack2 {
  	   position: absolute;  
-    	top: 400px;  
-    	left: 400px;  
+    	top: 100px;  
+    	left: 300px;  
     	opacity: 0.3;
-		width: 100px;	
+		width: 300px;	
 	}
 
  #jack3 {
  	   position: absolute;  
-    	top: 400px;  
+    	top: 300px;  
     	left: 600px;  
     	opacity: 0.3;
-		width: 100px;
+		width: 300px;
 	}
  #jack4 {
        position: absolute;  
-        top: 400px;  
-        left: 800px;  
+        top: 70px;  
+        left: 700px;  
         opacity: 0.3;
-        width: 100px;
+        width: 300px;
     }
  #jack5 {
        position: absolute;  
-        top: 400px;  
+        top: 300px;  
         left: 1000px;  
         opacity: 0.3;
-        width: 100px;
+        width: 300px;
     }
 
 div#dotpattern{
