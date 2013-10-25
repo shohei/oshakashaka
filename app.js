@@ -47,19 +47,30 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 
 var usersound = {};
+var usercount = {};
+// var lastValue = {};
+// var lastlastValue = {};
 //socket.io code
 io.sockets.on('connection', function (socket) {
 	socket.emit('news_event',{event_code : 'websocket is ready for '+socket.id});
 
-	var soundId = Math.floor(Math.random()*3)+1;
+	var soundId = Math.floor(Math.random()*5)+1;
 	usersound[socket.id] = soundId;
+	usercount[socket.id] = 0;
+	// lastValue[socket.id] = 0;
+	// lastlastValue[socket.id] = 0;
 	console.log(usersound);
 
 	socket.emit("image_event",usersound[socket.id]);
 	socket.broadcast.emit("desktop_image_event",usersound[socket.id]);
 
 	socket.on('x_snare',function(data){
-		socket.broadcast.emit('x_snare',usersound[socket.id]);
+		// lastlastValue[socket.id] = lastValue[socket.id];
+		// lastValue[socket.id] = data;
+		usercount[socket.id] =  parseInt(usercount[socket.id]) + 1;
+		// socket.broadcast.emit('x_snare',{"soundId" : usersound[socket.id], "usercount" : usercount[socket.id],"lastValue":lastValue[socket.id],"lastlastValue":lastlastValue[socket.id]});
+		socket.broadcast.emit('x_snare',{"soundId" : usersound[socket.id], "usercount" : usercount[socket.id]});
+		console.log(usercount[socket.id]);
 	});
 
 	socket.on('gyro_val',function(data){

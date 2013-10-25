@@ -1,13 +1,20 @@
 $(function(){
 	var mobsocket = io.connect();
+
+	var check = 0;
 	window.addEventListener("devicemotion",function(evt){
 	 	var x = evt.accelerationIncludingGravity.x; //
  		var y = evt.accelerationIncludingGravity.y; //
  		var z = evt.accelerationIncludingGravity.z; //
+ 		
  		if(x > 9){
- 			mobsocket.emit('x_snare');
- 			//Play();//doesnt work
+ 			check = 1;
  		}
+		if(check == 1 && x < -5){
+	 			mobsocket.emit('x_snare');
+ 				check = 0;
+ 		}
+ 		
  		$("#result_x").text("x:"+x);
  		$("#result_y").text("y:"+y);
  		$("#result_z").text("z:"+z);

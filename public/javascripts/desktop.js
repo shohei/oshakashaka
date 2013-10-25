@@ -4,7 +4,7 @@ $(function(){
 	socket.on("desktop_image_event",function(soundId){
 		$("#jack"+soundId).css("opacity",1);
 	socket.on("desktop_refresh",function(soundId){
-		$("#jack"+soundId).css("opacity",0);		
+		$("#jack"+soundId).css("opacity",0.3);		
 	});
 
 	});

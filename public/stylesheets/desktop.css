@@ -8,27 +8,69 @@
     	background-size: cover;
 	}
 
+.count{
+    color: #ffffff;
+}
+ #count1 {
+        position: absolute;  
+        top: 400px;  
+        left: 200px;  
+    }
 
+ #count2 {
+        position: absolute;  
+        top: 400px;  
+        left: 400px;  
+    }
+ #count3 {
+        position: absolute;  
+        top: 400px;  
+        left: 600px;  
+    }
+ #count4 {
+        position: absolute;  
+        top: 400px;  
+        left: 800px;  
+    }
+ #count5 {
+        position: absolute;  
+        top: 400px;  
+        left: 1000px;  
+    }
  #jack1 {
     	position: absolute;  
     	top: 400px;  
-    	left: 950px;  
-    	opacity: 0.1;
-		width: 220px;
+    	left: 200px;  
+    	opacity: 0.3;
+		width: 100px;
 	}
 
  #jack2 {
  	   position: absolute;  
-    	top: 200px;  
-    	left: 300px;  
-    	opacity: 0.1;
-		width: 180px;	
+    	top: 400px;  
+    	left: 400px;  
+    	opacity: 0.3;
+		width: 100px;	
 	}
 
  #jack3 {
  	   position: absolute;  
-    	top: 200px;  
-    	left: 520px;  
-    	opacity: 0;
-		width: 400px;
+    	top: 400px;  
+    	left: 600px;  
+    	opacity: 0.3;
+		width: 100px;
 	}
+ #jack4 {
+       position: absolute;  
+        top: 400px;  
+        left: 800px;  
+        opacity: 0.3;
+        width: 100px;
+    }
+ #jack5 {
+       position: absolute;  
+        top: 400px;  
+        left: 1000px;  
+        opacity: 0.3;
+        width: 100px;
+    }

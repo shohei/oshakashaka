@@ -9,17 +9,14 @@ $(function(){
 	});
 
 	socket.on('x_snare', function(data){
-		Play(data);
+		if(data["usercount"] == 10){
+		Play(data["soundId"]);
+	}
+	$("#count"+data["soundId"]).text(data["usercount"]);
 
 	})
 
 	
-	//ardino state
-	socket.on('pin_state', function(data){
-		var state_val = data["state"] * 2;
-		$("#freq").val(state_val);
-		Setup();
-	})
 
 
 });
