@@ -16,9 +16,9 @@ $(function(){
 	} else {
 
 	    //PC
- 		$("#main").load("desktop.html");
+ 		$("#main").load("desktop.html",null,function(){
 	 		$.getScript("javascripts/desktop.js");
-	 	alert("desktop client");
+	 		//alert("desktop client");
+	 	});
 	}
-
 });

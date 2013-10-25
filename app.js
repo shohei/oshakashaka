@@ -82,18 +82,21 @@ io.sockets.on('connection', function (socket) {
    			    currentMode[socket.id] = "y";
 			    socket.emit("switch_to_y");
 			    console.log("switch to y");
+			    socket.broadcast.emit("desktop_jack_shake",soundId);
 			    usercount[socket.id] = 0;
 			    break;
 			  case "y":
    			    currentMode[socket.id] = "z";
 			    socket.emit("switch_to_z");
 			    console.log("switch to z");
+			    socket.broadcast.emit("desktop_jack_up",soundId);
 			    usercount[socket.id] = 0;
 			    break;
    			  case "z":
    			    currentMode[socket.id] = "x";
 			    socket.emit("switch_to_x");
 			    console.log("switch to x");
+			    socket.broadcast.emit("desktop_jack_blink",soundId);
 			    usercount[socket.id] = 0;
     		    break;
 			}

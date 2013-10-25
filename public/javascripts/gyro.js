@@ -48,6 +48,9 @@ $(function(){
 		alert(soundId);
 	 	$("#user_img").html("<img src='/images/jack"+soundId+".jpg' class='jack'>");    	 		
 	});
+
+
+
 	mobsocket.on("switch_to_y",function(data){
 		currentMode = "y";
 	})
