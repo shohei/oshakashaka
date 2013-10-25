@@ -1,4 +1,3 @@
-
 if(typeof(webkitAudioContext)!=="undefined"){
     //alert('webkit');
     var audioctx = new webkitAudioContext();    
@@ -9,40 +8,22 @@ else if(typeof(AudioContext)!=="undefined"){
 }
 
 var buffer = null;
-LoadSample(audioctx, "/music/bell.wav");
-
-//oscillator code
-var play=0;
-var osc = audioctx.createOscillator();
-var gain = audioctx.createGain();
-osc.connect(gain);
-gain.connect(audioctx.destination);
-
-//start oscillator
-function StartOsc(){
-    osc.start(0);
-}
+//LoadSample(audioctx, "/music/bell.wav");
+/*var jackmode = $(".jack").attr("alt");
+console.log(jackmode);
+*/  
+//var jackmode = Math.floor(Math.random() * 3) +1;
+//console.log(jackmode);
+//LoadSample(audioctx, "/music/"+jackmode+".wav");
  
-function Setup() {
-    //var type = document.getElementById("type").selectedIndex;
-    var freq = parseFloat(document.getElementById("freq").value);
-    var level = parseFloat(document.getElementById("level").value);
- 
-    //osc.type = ["sine","square","sawtooth","triangle"][type];
-    //osc.type = type;
-    osc.type = "sine";
-    osc.frequency.value = freq;
-    gain.gain.value = level;
-}
-
 //play buffer
-function Play(socketid) {
-    //alert('ok');
-    console.log(socketid);
-    var src = audioctx.createBufferSource();
-    src.buffer = buffer;
-    src.connect(audioctx.destination);
-    src.start(0);
+function Play(soundId) {
+    // var src = audioctx.createBufferSource();
+    // src.buffer = buffer;
+    // src.connect(audioctx.destination);
+    // src.start(0);
+    var audio = new Audio("/music/"+soundId+".wav");    
+    audio.play();
 }
 //sample loading
 function LoadSample(ctx, url) {
@@ -58,21 +39,5 @@ function LoadSample(ctx, url) {
     }
     req.send();
 }
-
-
-//jquery usage code
-$(function(){
- //alert("loaded");
-    $("#button").click(function(){
-        Play();
-    });
-
-    $("#oscillator").click(function(){
-        StartOsc();
-    });
-
-
-});
-
 
 

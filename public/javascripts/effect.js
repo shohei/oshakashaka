@@ -1,7 +1,6 @@
 $(function(){
 	//xxx	alert("loaded");
 	$("#button1").click(function(){
-		$("#jack1").css("opacity",1);
 		alert("button1");
 	});
 	$("#button2").click(function(){

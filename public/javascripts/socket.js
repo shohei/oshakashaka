@@ -1,4 +1,6 @@
 $(function(){
+	//$.getScript("javascripts/audio.js");
+
 	var socket = io.connect();
 	//starting web socket
 	socket.on('news_event', function(data){
@@ -7,7 +9,7 @@ $(function(){
 	});
 
 	socket.on('x_snare', function(data){
-		Play(data['devid']);
+		Play(data);
 
 	})
 
