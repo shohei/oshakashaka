@@ -7,7 +7,7 @@ var express = require('express')
   , routes = require('./routes');
 var io = require('socket.io');
 var app = module.exports = express.createServer();
-var io = io.listen(app);
+var io = io.listen(app, {'log level': 2});
 
 //Serial port
 //var serialport = require('serialport');
@@ -48,6 +48,7 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 var usersound = {};
 var usercount = {};
+var currentMode = {};
 // var lastValue = {};
 // var lastlastValue = {};
 //socket.io code
@@ -57,17 +58,47 @@ io.sockets.on('connection', function (socket) {
 	var soundId = Math.floor(Math.random()*5)+1;
 	usersound[socket.id] = soundId;
 	usercount[socket.id] = 0;
+	currentMode[socket.id] = "x";
 	// lastValue[socket.id] = 0;
 	// lastlastValue[socket.id] = 0;
 	console.log(usersound);
 
 	socket.emit("image_event",usersound[socket.id]);
+	socket.emit("switch_to_x");
 	socket.broadcast.emit("desktop_image_event",usersound[socket.id]);
 
 	socket.on('x_snare',function(data){
 		// lastlastValue[socket.id] = lastValue[socket.id];
 		// lastValue[socket.id] = data;
 		usercount[socket.id] =  parseInt(usercount[socket.id]) + 1;
+		if(usercount[socket.id] % 40 == 0){
+			socket.broadcast.emit("desktop_jack_blink",soundId);
+		}
+		if(usercount[socket.id] ==  20){
+			var cmode = currentMode[socket.id];
+			console.log(cmode);
+			switch(cmode){
+			  case "x":
+   			    currentMode[socket.id] = "y";
+			    socket.emit("switch_to_y");
+			    console.log("switch to y");
+			    usercount[socket.id] = 0;
+			    break;
+			  case "y":
+   			    currentMode[socket.id] = "z";
+			    socket.emit("switch_to_z");
+			    console.log("switch to z");
+			    usercount[socket.id] = 0;
+			    break;
+   			  case "z":
+   			    currentMode[socket.id] = "x";
+			    socket.emit("switch_to_x");
+			    console.log("switch to x");
+			    usercount[socket.id] = 0;
+    		    break;
+			}
+		}
+
 		// socket.broadcast.emit('x_snare',{"soundId" : usersound[socket.id], "usercount" : usercount[socket.id],"lastValue":lastValue[socket.id],"lastlastValue":lastlastValue[socket.id]});
 		socket.broadcast.emit('x_snare',{"soundId" : usersound[socket.id], "usercount" : usercount[socket.id]});
 		console.log(usercount[socket.id]);

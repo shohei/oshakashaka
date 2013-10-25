@@ -6,6 +6,14 @@ $(function(){
 	socket.on("desktop_refresh",function(soundId){
 		$("#jack"+soundId).css("opacity",0.3);		
 	});
+	socket.on("desktop_jack_blink",function(soundId){
+		$("#jack"+soundId).fadeOut();				
+		$("#jack"+soundId).fadeIn();				
+		$("#jack"+soundId).fadeOut();				
+		$("#jack"+soundId).fadeIn();				
+		$("#jack"+soundId).fadeOut();				
+		$("#jack"+soundId).fadeIn();				
+	})
 
 	});
 

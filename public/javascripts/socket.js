@@ -9,10 +9,13 @@ $(function(){
 	});
 
 	socket.on('x_snare', function(data){
-		if(data["usercount"] == 10){
-		Play(data["soundId"]);
+		if(data["usercount"] % 10 == 0){
+     		Play(data["soundId"]);
 	}
-	$("#count"+data["soundId"]).text(data["usercount"]);
+
+
+	var usercount = Math.floor(parseInt(data["usercount"]) / 2 ) ;
+	$("#count"+data["soundId"]).text(usercount);
 
 	})
 
