@@ -1,26 +1,3 @@
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background: url("../images/halloween3.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-didn't work well device separate when using other method like javascript, media tag in css
-*/
-
-/*mobile*/
-/*@media all and (max-width: 580px) {
-  body {
-		}
-}
-*/
-
-
-
-/*PC*/
-/*@media all and (min-width: 640px) {
  body  {
 	 	padding: 50px;
   		font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -36,7 +13,7 @@ didn't work well device separate when using other method like javascript, media 
     	position: absolute;  
     	top: 400px;  
     	left: 950px;  
-    	opacity: 0.2;
+    	opacity: 0.1;
 		width: 220px;
 	}
 
@@ -44,7 +21,7 @@ didn't work well device separate when using other method like javascript, media 
  	   position: absolute;  
     	top: 200px;  
     	left: 300px;  
-    	opacity: 0.2;
+    	opacity: 0.1;
 		width: 180px;	
 	}
 
@@ -55,7 +32,3 @@ didn't work well device separate when using other method like javascript, media 
     	opacity: 0;
 		width: 400px;
 	}
-
-}
-
-*/
