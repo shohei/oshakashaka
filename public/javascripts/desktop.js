@@ -6,6 +6,7 @@ $(function(){
 	var socket = io.connect();
 	socket.on("desktop_image_event",function(soundId){
 		$("#jack"+soundId).css("opacity",1);
+		$("#jack"+soundId).effect("bounce",{"direction":"up","distance":400,"mode":"effect","times":30},500);
 		 $("#jack"+soundId).jrumble({
 		 	speed: 20
 		 });
