@@ -92,6 +92,14 @@ video#sample-video{
     z-index:-2;
 }
 
+video#ending-video{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-3;
+}
+
+
 #jack1_shadow{
     position: absolute;  
         top: 360px;  

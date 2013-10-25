@@ -1,5 +1,5 @@
 $(function(){
-
+   
 	$("#button1").click(function(){
 		$('#jack1_shadow').css("opacity",1);//effect( 'explode', '', 700 );
 		$('#jack1_shadow').hide("puff", {"percent": 200}, 2000);

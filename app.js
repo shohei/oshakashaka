@@ -71,10 +71,10 @@ io.sockets.on('connection', function (socket) {
 		// lastlastValue[socket.id] = lastValue[socket.id];
 		// lastValue[socket.id] = data;
 		usercount[socket.id] =  parseInt(usercount[socket.id]) + 1;
-		if(usercount[socket.id] % 40 == 0){
-			socket.broadcast.emit("desktop_jack_blink",soundId);
+		if(usercount[socket.id] % 20 == 0){
+			socket.broadcast.emit("effect",{"soundId":soundId,"currentMode":currentMode[socket.id]});
 		}
-		if(usercount[socket.id] ==  20){
+		if(usercount[socket.id] ==  40){
 			var cmode = currentMode[socket.id];
 			console.log(cmode);
 			switch(cmode){
@@ -96,7 +96,7 @@ io.sockets.on('connection', function (socket) {
    			    currentMode[socket.id] = "x";
 			    socket.emit("switch_to_x");
 			    console.log("switch to x");
-			    socket.broadcast.emit("desktop_jack_blink",soundId);
+			    socket.broadcast.emit("desktop_ending",soundId);
 			    usercount[socket.id] = 0;
     		    break;
 			}
