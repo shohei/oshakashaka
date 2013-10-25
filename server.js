@@ -10,16 +10,16 @@ var app = module.exports = express.createServer();
 var io = io.listen(app);
 
 //Serial port
-var serialport = require('serialport');
-var portName = '/dev/tty.usbmodemfa131';
-var sp = new serialport.SerialPort(portName,{
-	baudRate: 9600,
-	dataBits: 8,
-	parity: 'none',
-	stopBits: 1,
-	flowControl: false,
-	parser: serialport.parsers.readline("\n")
-});
+// var serialport = require('serialport');
+// var portName = '/dev/tty.usbmodemfa131';
+// var sp = new serialport.SerialPort(portName,{
+// 	baudRate: 9600,
+// 	dataBits: 8,
+// 	parity: 'none',
+// 	stopBits: 1,
+// 	flowControl: false,
+// 	parser: serialport.parsers.readline("\n")
+// });
 
 // Configuration
 
@@ -41,7 +41,7 @@ app.configure('production', function(){
 });
 
 // Routes
-app.get('/',routes.index);
+app.get('/', routes.index);
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 
@@ -50,7 +50,7 @@ io.sockets.on('connection', function (socket) {
 	socket.emit('news_event',{event_code : 'websocket is ready for '+socket.id});
 
 	socket.on('x_snare',function(data){
-		socket.broadcast.emit('x_snare');
+		socket.broadcast.emit('x_snare',{devid:socket.id});
 	});
 
 	socket.on('gyro_val',function(data){
@@ -58,10 +58,10 @@ io.sockets.on('connection', function (socket) {
 	});
 
 	// data from serial port
-	sp.on('data', function(input){
-		var arduino_data = input;
-		socket.emit('pin_state',{state : arduino_data});
-	});
+	// sp.on('data', function(input){
+	// 	var arduino_data = input;
+	// 	socket.emit('pin_state',{state : arduino_data});
+	// });
 
 });
 

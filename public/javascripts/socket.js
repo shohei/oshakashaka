@@ -6,8 +6,8 @@ $(function(){
 		alert(data["event_code"]);
 	});
 
-	socket.on('x_snare', function(){
-		Play();
+	socket.on('x_snare', function(data){
+		Play(data['devid']);
 
 	})
 
