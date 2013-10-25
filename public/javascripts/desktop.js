@@ -1,6 +1,5 @@
 $(function(){
 
-	alert('desktop.js');
     var w = screen.width * 1.05;
     $("video#sample-video").attr("width", w);
 
@@ -23,7 +22,7 @@ $(function(){
 		$("#jack"+soundId).fadeOut();				
 		$("#jack"+soundId).fadeIn();				
 	});
-	socket.on("desktop_ending"){
+	socket.on("desktop_ending",function(soundId){
 		//blink
 		$("#jack"+soundId).fadeOut();				
 		$("#jack"+soundId).fadeIn();				
@@ -32,10 +31,15 @@ $(function(){
 		$("#jack"+soundId).fadeOut();				
 		$("#jack"+soundId).fadeIn();				
 
-		$('video')[0].pause();		
-		
+		$('video')[0].pause();
+		$("#videoarea").html("");
+		$("#videoarea").html('<video id="ending-video" autoplay><source src="/video/ending.mp4"></video>');
 
-	};
+		$("#dotpattern").remove();
+		var w = screen.width * 1.05;
+		$("video#ending-video").attr("width", w);
+
+	});
 
 	socket.on("desktop_jack_shake",function(soundId){
 		$("#jack"+soundId).effect("bounce",{"direction":"up","distance":200,"mode":"effect","times":10},100);
