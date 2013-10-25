@@ -1,4 +1,5 @@
 $(function(){
+
 	var mobsocket = io.connect();
 
 	var check_x = 0;

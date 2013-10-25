@@ -7,10 +7,10 @@ $(function(){
 	var socket = io.connect();
 	socket.on("desktop_image_event",function(soundId){
 		$("#jack"+soundId).css("opacity",1);
-		// $("#jack"+soundId).jrumble({
-		// 	speed: 20
-		// });
-		// $("#jack"+soundId).trigger('startRumble');
+		 $("#jack"+soundId).jrumble({
+		 	speed: 20
+		 });
+		 $("#jack"+soundId).trigger('startRumble');
 	});
 	socket.on("desktop_refresh",function(soundId){
 		$("#jack"+soundId).css("opacity",0.3);		
@@ -33,8 +33,6 @@ $(function(){
 
 	});
 
-
-	});
 
 	// var hoge = 1
 	//  	switch (hoge){
