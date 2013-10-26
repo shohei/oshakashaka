@@ -5,11 +5,15 @@ $(function(){
 
 	var socket = io.connect();
 	socket.on("desktop_image_event",function(soundId){
+		var position = {1:{"top":"300px","left":"100px"},2:{"top":"100px","left":"300px"},3:{"top":"300px","left":"600px"},4:{"top":"70px","left":"700px"},5:{"top":"300px","left":"1000px"}};
+
 		var audio = new Audio("music/appear"+soundId+".wav");
 		audio.play();
 		$("#jack"+soundId).css("opacity",1);
 		$("#jack"+soundId).effect("bounce",{"direction":"up","distance":400,"mode":"effect","times":30},500);
 		 $("#jack"+soundId).jrumble({
+		 	"top": position[soundId]["top"],
+		 	"left": position[soundId]["left"],
 		 	speed: 0,
 		 	rumbleEvent:"constant"
 		 });
@@ -68,14 +72,14 @@ $(function(){
      	  console.log("XXXXXX!!!");
 		  $('#jack'+soundId+'_shadow').css("width","200px");//effect( 'explode', '', 700 );
   		  $("#jack"+soundId+"_shadow").css("opacity",1);//effect( 'explode', '', 700 );
-		  $("#jack"+soundId+"_shadow").hide("puff", {"percent": 200}, 2000);
+		  $("#jack"+soundId+"_shadow").hide("puff",{}, 2000);
 		} else if(currentMode == "y"){
 		console.log("Y!!!");
 		// $('#jack'+soundId+'_shadow').css("top","200px");//effect( 'explode', '', 700 );
-		// $('#jack'+soundId+'_shadow').css("left","200px");//effect( 'explode', '', 700 );
+		// $('#jack'+soundId+'_shadow').css("left",100*soundId+"px");//effect( 'explode', '', 700 );
 		$('#jack'+soundId+'_shadow').css("width","1000px");//effect( 'explode', '', 700 );
 		$('#jack'+soundId+'_shadow').css("opacity",1);//effect( 'explode', '', 700 );
-		$('#jack'+soundId+'_shadow').hide("puff", {"percent": 200}, 4000);
+		$('#jack'+soundId+'_shadow').hide("puff",{}, 4000);
 		}
 	});
 
