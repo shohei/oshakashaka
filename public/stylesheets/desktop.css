@@ -95,6 +95,7 @@ video#sample-video{
 }
 
 video#ending-video{
+    display:none;
     position:fixed;
     top:0;
     left:0;

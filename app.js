@@ -99,7 +99,7 @@ io.sockets.on('connection', function (socket) {
 			    socket.emit("switch_to_x");
 			    console.log("switch to x");
 			    socket.broadcast.emit("desktop_ending",soundId);
-			    //usercount[socket.id] = 0;
+			    usercount[socket.id] = 0;
     		    break;
 			}
 		}
