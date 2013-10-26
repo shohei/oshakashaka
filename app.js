@@ -72,10 +72,10 @@ io.sockets.on('connection', function (socket) {
 		// lastValue[socket.id] = data;
 		usercount[socket.id] =  parseInt(usercount[socket.id]) + 1;
 		//fireworks
-		if(usercount[socket.id] % 20 == 0){
+		if(usercount[socket.id] % 10 == 0){
 			socket.broadcast.emit("effect",{"soundId":soundId,"currentMode":currentMode[socket.id]});
 		}
-		if(usercount[socket.id] ==  200){
+		if(usercount[socket.id] ==  60){
 			var cmode = currentMode[socket.id];
 			console.log(cmode);
 			switch(cmode){
