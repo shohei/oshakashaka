@@ -38,8 +38,8 @@ $(function(){
 		$("#jack"+soundId).fadeIn();				
 	});
 	socket.on("desktop_ending",function(soundId){
-		var audio = new Audio("/music/gameclear.wav");
-		audio.play();
+		//var audio = new Audio("/music/gameclear.wav");
+		//audio.play();
 
 		//blink
 		$("#jack"+soundId).fadeOut();				
