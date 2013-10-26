@@ -112,6 +112,14 @@ io.sockets.on('connection', function (socket) {
 		socket.broadcast.emit('gyro_val',{x_val : data["x_val"], y_val : data["y_val"],z_val : data["z_val"]});
 	});
 
+	//add
+	socket.on('mob_count',function(data){
+		//console.log(data);
+		socket.broadcast.emit("mob_count_write",data);
+	});
+
+
+
 	socket.on('disconnect', function () {
 	 //  var flag = 1;
 	 //  for(var sokid in usersound)

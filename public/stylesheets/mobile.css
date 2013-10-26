@@ -3,9 +3,14 @@
 	}
 
 .jack {
-  -webkit-box-reflect: below 4px -webkit-gradient(linear, left top, 
+   -webkit-box-reflect: below 4px -webkit-gradient(linear, left top, 
 　　left bottom, from(transparent), 
 　　color-stop(.7, transparent), to(white));
     margin: 5px auto;    
     width: 300px;
+}
+.count{
+	color: #ffffff;
+	font-size: 100px;
+	text-align: center;
 }

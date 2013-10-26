@@ -9,15 +9,21 @@ $(function(){
 	});
 
 	socket.on('x_snare', function(data){
+		//$("#jack"+data["soundId"]).yurayura({"move":50,"delay":10,"duration":1000});
+		$("#jack"+data["soundId"]).trigger("hover");
 		if(data["usercount"] % 10 == 0){
      		Play(data["soundId"]);
 	}
 
 
 	var usercount = Math.floor(parseInt(data["usercount"]) / 2 ) ;
-	$("#count"+data["soundId"]).text(usercount);
+	  $("#count"+data["soundId"]).text(usercount);
+	  //add
+	  //alert(usercount);
+	  // socket.broadcast.emit("mobile_count", usercount);
+	  socket.emit("mob_count", usercount);
 
-	})
+	});
 
 	
 

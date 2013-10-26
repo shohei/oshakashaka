@@ -8,13 +8,13 @@ $(function(){
 		$("#jack"+soundId).css("opacity",1);
 		$("#jack"+soundId).effect("bounce",{"direction":"up","distance":400,"mode":"effect","times":30},500);
 		 $("#jack"+soundId).jrumble({
-		 	speed: 20
+		 	speed: 0,
+		 	rumbleEvent:"constant"
 		 });
 		 $("#jack"+soundId).trigger('startRumble');
- 		$("#jack"+data["soundId"]).yurayura({"move":5,"delay":10,"duration":1000*60*30})
 	});
 	socket.on("desktop_refresh",function(soundId){
-		$("#jack"+soundId).css("opacity",0.3);		
+		$("#jack"+soundId).css("opacity",0);		
 	});
 	socket.on("desktop_jack_blink",function(soundId){
 		$("#jack"+soundId).fadeOut();				

@@ -50,6 +50,13 @@ $(function(){
 	 	$("#user_img").html("<img src='/images/jack"+soundId+"_proccessed.png' class='jack'>");    	 		
 	});
 
+	//add
+	mobsocket.on("mob_count_write",function(data){
+		//alert(data);
+		$("#user_count").text(data);
+
+	});
+
 	mobsocket.on("switch_to_y",function(data){
 		currentMode = "y";
 	})
