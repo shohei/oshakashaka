@@ -71,10 +71,11 @@ io.sockets.on('connection', function (socket) {
 		// lastlastValue[socket.id] = lastValue[socket.id];
 		// lastValue[socket.id] = data;
 		usercount[socket.id] =  parseInt(usercount[socket.id]) + 1;
+		//fireworks
 		if(usercount[socket.id] % 20 == 0){
 			socket.broadcast.emit("effect",{"soundId":soundId,"currentMode":currentMode[socket.id]});
 		}
-		if(usercount[socket.id] ==  40){
+		if(usercount[socket.id] ==  200){
 			var cmode = currentMode[socket.id];
 			console.log(cmode);
 			switch(cmode){
@@ -111,6 +112,14 @@ io.sockets.on('connection', function (socket) {
 	socket.on('gyro_val',function(data){
 		socket.broadcast.emit('gyro_val',{x_val : data["x_val"], y_val : data["y_val"],z_val : data["z_val"]});
 	});
+
+	//add
+	socket.on('mob_count',function(data){
+		//console.log(data);
+		socket.broadcast.emit("mob_count_write",data);
+	});
+
+
 
 	socket.on('disconnect', function () {
 	 //  var flag = 1;
