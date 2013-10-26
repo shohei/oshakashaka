@@ -80,11 +80,11 @@ $(function(){
 		  // $("#jack"+soundId+"_shadow").hide("puff",{}, 2000);
 		} else if(currentMode == "y"){
 		console.log("Y!!!");
-		 $('#jack'+soundId+'_shadow').css("top",fire_position[soundId]["top"]);//effect( 'explode', '', 700 );
-		 $('#jack'+soundId+'_shadow').css("left",fire_position[soundId]["left"]);//effect( 'explode', '', 700 );
-		 $('#jack'+soundId+'_shadow').css("width","400px");//effect( 'explode', '', 700 );
-		 $('#jack'+soundId+'_shadow').css("opacity",1);//effect( 'explode', '', 700 );
-		 $('#jack'+soundId+'_shadow').hide("puff",{}, 4000);
+		//$('#jack'+soundId+'_shadow').css("top",fire_position[soundId]["top"]);//effect( 'explode', '', 700 );
+		// $('#jack'+soundId+'_shadow').css("left",fire_position[soundId]["left"]);//effect( 'explode', '', 700 );
+		// $('#jack'+soundId+'_shadow').css("width","400px");//effect( 'explode', '', 700 );
+		//$('#jack'+soundId+'_shadow').css("opacity",1);//effect( 'explode', '', 700 );
+		//$('#jack'+soundId+'_shadow').hide("puff",{}, 4000);
 		}
 	});
 
