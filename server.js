@@ -83,7 +83,7 @@ io.sockets.on('connection', function (socket) {
    			    currentMode[socket.id] = "y";
 			    socket.emit("switch_to_y");
 			    console.log("switch to y");
-			    socket.broadcast.emit("desktop_jack_shake",soundId);
+			    socket.broadcast.emit("desktop_ending",soundId);
 			    //socket.broadcast.emit("desktop_ending",soundId);
 			    //usercount[socket.id] = 0;
 			    break;
