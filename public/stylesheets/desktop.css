@@ -11,6 +11,7 @@
 .count{
     color: #ffffff;
     font-family: 'Bigelow Rules', cursive;
+    font-size: 25px;
 }
  #count1 {
         position: absolute;  
