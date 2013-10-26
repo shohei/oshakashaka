@@ -1,5 +1,7 @@
 $(function(){
 	//$.getScript("javascripts/audio.js");
+	var position = {1:{"top":"300px","left":"100px"},2:{"top":"100px","left":"300px"},3:{"top":"300px","left":"600px"},4:{"top":"70px","left":"700px"},5:{"top":"300px","left":"1000px"}};
+
 
 	var socket = io.connect();
 	//starting web socket
@@ -10,7 +12,19 @@ $(function(){
 
 	socket.on('x_snare', function(data){
 		//$("#jack"+data["soundId"]).yurayura({"move":50,"delay":10,"duration":1000});
-		$("#jack"+data["soundId"]).trigger("hover");
+		var soundId = data["soundId"];
+
+    	$("#jack"+soundId).jrumble({
+		 	 "posX": position[soundId]["left"],
+		 	 "posY": position[soundId]["top"],
+		 	speed: 0,
+		 	rumbleEvent:"constant"
+		 });
+		 $("#jack"+soundId).trigger('startRumble');
+		 console.log("poxX:"+position[soundId]["left"]+", posY:"+position[soundId]["top"]);
+		//$("#jack"+data["soundId"]).trigger("hover");
+
+
 		var audio = new Audio("/music/tap1.wav");
 		audio.play();
 		if(data["usercount"] % 40 == 0){
