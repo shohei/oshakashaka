@@ -8,7 +8,7 @@ $(function(){
 	 		//alert("mobile client");
 	 	});
 
-	} else if (navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('iPad') > 0){
+		// } else if (navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('iPad') > 0){
 
 	    //Tablet
 	 	//alert("tablet client");    
