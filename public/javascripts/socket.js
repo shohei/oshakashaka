@@ -11,7 +11,9 @@ $(function(){
 	socket.on('x_snare', function(data){
 		//$("#jack"+data["soundId"]).yurayura({"move":50,"delay":10,"duration":1000});
 		$("#jack"+data["soundId"]).trigger("hover");
-		if(data["usercount"] % 10 == 0){
+		var audio = new Audio("/music/tap1.wav");
+		audio.play();
+		if(data["usercount"] % 40 == 0){
      		Play(data["soundId"]);
 	}
 

@@ -100,14 +100,12 @@ video#ending-video{
     z-index:2;
 }
 
-
 #jack1_shadow{
     position: absolute;  
         top: 360px;  
         left: 160px;  
         opacity: 0;
-        width: 200px;
-  
+    
 /*    -webkit-filter: drop-shadow(4px 4px 40px white);
     -moz-filter: drop-shadow(4px 4px 40px white);
     -ms-filter: drop-shadow(4px 4px 40px white);
@@ -120,7 +118,6 @@ video#ending-video{
         top: 360px;  
         left: 360px;  
         opacity: 0;
-        width: 200px;
 }
 
 #jack3_shadow{
@@ -128,19 +125,16 @@ video#ending-video{
         top: 360px;  
         left: 560px;  
         opacity: 0;
-        width: 200px;
 }
 #jack4_shadow{
     position: absolute;  
         top: 360px;  
         left: 760px;  
         opacity: 0;
-        width: 200px;
 }
 #jack5_shadow{
     position: absolute;  
         top: 360px;  
         left: 960px;  
         opacity: 0;
-        width: 200px;
 }

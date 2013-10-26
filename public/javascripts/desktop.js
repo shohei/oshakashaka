@@ -5,6 +5,8 @@ $(function(){
 
 	var socket = io.connect();
 	socket.on("desktop_image_event",function(soundId){
+		var audio = new Audio("music/appear"+soundId+".wav");
+		audio.play();
 		$("#jack"+soundId).css("opacity",1);
 		$("#jack"+soundId).effect("bounce",{"direction":"up","distance":400,"mode":"effect","times":30},500);
 		 $("#jack"+soundId).jrumble({
@@ -14,6 +16,8 @@ $(function(){
 		 $("#jack"+soundId).trigger('startRumble');
 	});
 	socket.on("desktop_refresh",function(soundId){
+		var audio = new Audio("/music/disappear"+soundId+".wav");
+		audio.play();
 		$("#jack"+soundId).css("opacity",0);		
 	});
 	socket.on("desktop_jack_blink",function(soundId){
@@ -25,6 +29,9 @@ $(function(){
 		$("#jack"+soundId).fadeIn();				
 	});
 	socket.on("desktop_ending",function(soundId){
+		var audio = new Audio("/music/gameclear.wav");
+		audio.play();
+
 		//blink
 		$("#jack"+soundId).fadeOut();				
 		$("#jack"+soundId).fadeIn();				
@@ -56,15 +63,19 @@ $(function(){
 	socket.on("effect",function(data){
 		var soundId = data["soundId"];
 		var currentMode = data["currentMode"];
+		console.log("fireworks fired! with "+currentMode);
 		if(currentMode == "x"){
+     	  console.log("XXXXXX!!!");
+		  $('#jack'+soundId+'_shadow').css("width","200px");//effect( 'explode', '', 700 );
   		  $("#jack"+soundId+"_shadow").css("opacity",1);//effect( 'explode', '', 700 );
 		  $("#jack"+soundId+"_shadow").hide("puff", {"percent": 200}, 2000);
 		} else if(currentMode == "y"){
-		$('#jack'+soundId+'_shadow').css("top","200px");//effect( 'explode', '', 700 );
-		$('#jack'+soundId+'_shadow').css("left","200px");//effect( 'explode', '', 700 );
-		$('#jack'+soundId+'_shadow').css("width","600px");//effect( 'explode', '', 700 );
+		console.log("Y!!!");
+		// $('#jack'+soundId+'_shadow').css("top","200px");//effect( 'explode', '', 700 );
+		// $('#jack'+soundId+'_shadow').css("left","200px");//effect( 'explode', '', 700 );
+		$('#jack'+soundId+'_shadow').css("width","1000px");//effect( 'explode', '', 700 );
 		$('#jack'+soundId+'_shadow').css("opacity",1);//effect( 'explode', '', 700 );
-		$('#jack'+soundId+'_shadow').hide("puff", {"percent": 200}, 2000);
+		$('#jack'+soundId+'_shadow').hide("puff", {"percent": 200}, 4000);
 		}
 	});
 
