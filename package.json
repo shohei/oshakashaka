@@ -6,6 +6,6 @@
       "express": "2.5.8"
     , "jade": ">= 0.0.1"
     , "serialport": ""
-    , "socket.io" 
+    , "socket.io" :""
   }
 }
